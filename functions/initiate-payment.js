@@ -33,7 +33,7 @@ exports.handler = async (event, context) => {
   
   try {
     const requestBody = JSON.parse(event.body);
-    const { phoneNumber, amount = 130, description = 'Job Application Processing Fee' } = requestBody;
+    const { phoneNumber, amount = 129, description = 'Job Application Processing Fee' } = requestBody;
     
     console.log('Parsed request:', { phoneNumber, amount, description });
     
@@ -46,7 +46,7 @@ exports.handler = async (event, context) => {
     }
     
     // Generate a unique reference for this payment
-    const externalReference = `MPYA-${Date.now()}-${Math.floor(Math.random() * 1000)}`;
+    const externalReference = `receipt-${Date.now()}-${Math.floor(Math.random() * 1000)}`;
     
     // Prepare PesaFlux payload
     const pesafluxPayload = {
