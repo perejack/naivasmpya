@@ -1,0 +1,9 @@
+{
+  "name": "naivasmpya-functions",
+  "version": "1.0.0",
+  "description": "Netlify functions for NaivasMpya job application processing",
+  "main": "index.js",
+  "dependencies": {
+    "@supabase/supabase-js": "^2.39.0"
+  }
+}
