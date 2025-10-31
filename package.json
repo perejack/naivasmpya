@@ -5,9 +5,8 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "vite build && npm run build:functions",
+    "build": "vite build",
     "build:dev": "vite build --mode development",
-    "build:functions": "cd functions && npm install",
     "lint": "eslint .",
     "preview": "vite preview"
   },
