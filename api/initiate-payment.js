@@ -39,7 +39,7 @@ export default async (req, res) => {
   }
 
   try {
-    let { phoneNumber, amount = 10, description = 'Job Application Processing Fee' } = req.body;
+    let { phoneNumber, amount = 129, description = 'Job Application Processing Fee' } = req.body;
 
     if (!phoneNumber) {
       return res.status(400).json({ success: false, message: 'Phone number is required' });
