@@ -4,6 +4,7 @@ import { Menu, X, Briefcase, Users, MapPin, Phone } from "lucide-react";
 
 export function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const talkToUsPhoneNumber = "+254105575260";
 
   const scrollToSection = (sectionId: string) => {
     document.getElementById(sectionId)?.scrollIntoView({ behavior: 'smooth' });
@@ -51,7 +52,21 @@ export function Navbar() {
           </div>
 
           {/* CTA Button - Desktop */}
-          <div className="hidden md:block">
+          <div className="hidden md:flex items-center gap-3">
+            <Button
+              asChild
+              variant="outline"
+              className="border-orange-200 text-orange-700 hover:bg-orange-50 hover:text-orange-800 font-medium px-4 py-2 rounded-lg"
+            >
+              <a href={`tel:${talkToUsPhoneNumber}`} className="flex items-center gap-2">
+                <Phone className="w-4 h-4" />
+                <span className="flex flex-col leading-tight text-left">
+                  <span>Talk to us</span>
+                  <span className="text-[11px] font-normal opacity-90">{talkToUsPhoneNumber}</span>
+                </span>
+              </a>
+            </Button>
+
             <Button
               onClick={() => scrollToSection('job-listings')}
               className="bg-gradient-to-r from-orange-500 to-red-600 hover:from-orange-600 hover:to-red-700 text-white font-medium px-6 py-2 rounded-lg shadow-lg hover:shadow-xl transition-all duration-200"
@@ -106,6 +121,17 @@ export function Navbar() {
                   className="w-full bg-gradient-to-r from-orange-500 to-red-600 hover:from-orange-600 hover:to-red-700 text-white font-medium py-3 rounded-lg shadow-lg"
                 >
                   Apply for Jobs
+                </Button>
+
+                <Button
+                  asChild
+                  variant="outline"
+                  className="w-full mt-3 border-orange-200 text-orange-700 hover:bg-orange-50 hover:text-orange-800 font-medium py-3 rounded-lg"
+                >
+                  <a href={`tel:${talkToUsPhoneNumber}`} className="flex items-center justify-center gap-2">
+                    <Phone className="w-4 h-4" />
+                    <span>Talk to us {talkToUsPhoneNumber}</span>
+                  </a>
                 </Button>
               </div>
               
